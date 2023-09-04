@@ -1,6 +1,6 @@
 import { GoogleAuthProvider, OAuthProvider, getAdditionalUserInfo, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase";
-import { getUserData } from "./user";
+import { createUser, getUserData } from "./user";
 
 export async function signInWithGoogle() {
     const provider = new GoogleAuthProvider();
@@ -9,6 +9,7 @@ export async function signInWithGoogle() {
 
     if (ucData && ucData.isNewUser) {
         // Create a new user in the database
+        await createUser(uc);
     }
 
     // Get the user from the database
@@ -27,6 +28,7 @@ export async function signInWithMicrosoft() {
 
     if (ucData && ucData.isNewUser) {
         // Create a new user in the database
+        await createUser(uc);
     }
 
     // Get the user from the database
