@@ -1,0 +1,55 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bg500);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+.music_note {
+    width: 100px;
+    height: 100px;
+    animation: hop 3s infinite;
+}
+
+.music_note path {
+    fill: var(--bg600);
+    transition: 0.2s ease-in-out;
+    animation: change-color 3s infinite;
+}
+
+@keyframes hop {
+    0% {
+        transform: translateY(0px);
+    }
+
+    16% {
+        transform: translateY(-20px);
+    }
+
+    32% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes change-color {
+    0% {
+        fill: var(--bg600);
+    }
+
+    16% {
+        fill: var(--p500);
+    }
+
+    32% {
+        fill: var(--bg600);
+    }
+}

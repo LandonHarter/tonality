@@ -3,21 +3,21 @@ import { onAuthStateChanged } from "firebase/auth";
 import { auth } from "@/backend/firebase";
 import { User } from "@/backend/types";
 import { getUserData } from "@/backend/auth/user";
+import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function useCurrentUser() {
-    const [user, setUser] = useState<User | null>(null);
+    const [user, loading, error] = useAuthState(auth);
+    const [currentUser, setCurrentUser] = useState<User | null>(null);
 
     useEffect(() => {
-        onAuthStateChanged(auth, async (user) => {
-            if (!user) {
-                setUser(null);
-                return;
-            }
+        if (user) {
+            getUserData(user.uid).then((userData) => {
+                setCurrentUser(userData);
+            });
+        } else {
+            setCurrentUser(null);
+        }
+    }, [user]);
 
-            const userData = await getUserData(user.uid);
-            setUser(userData);
-        });
-    }, []);
-
-    return user;
+    return { user: currentUser, loading, error };
 }
