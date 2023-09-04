@@ -1,6 +1,6 @@
 import styles from './page.module.css';
 
-export async function VerificationPage() {
+export default function VerificationPage() {
     return (
         <main>
 
