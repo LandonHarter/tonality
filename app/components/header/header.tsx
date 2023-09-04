@@ -14,6 +14,7 @@ export default function Header() {
         '/login',
         '/register',
         '/credits',
+        '/verification'
     ];
 
     useEffect(() => {

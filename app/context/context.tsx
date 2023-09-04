@@ -1,7 +1,7 @@
 'use client'
 
 import useCurrentUser from "@/hooks/useCurrentUser";
-import UserContext from "./UserContext"
+import UserContext from "./UserContext";
 
 export function UserContextProvider(
     { children }: { children: React.ReactNode }

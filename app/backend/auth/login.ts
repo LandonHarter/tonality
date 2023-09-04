@@ -1,10 +1,11 @@
-import { GoogleAuthProvider, OAuthProvider, getAdditionalUserInfo, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { GoogleAuthProvider, OAuthProvider, getAdditionalUserInfo, signInWithPopup, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 import { auth } from "../firebase";
-import { createUser, getUserData } from "./user";
+import { createUserFromProvider, createUserFromEmail, getUserData } from "./user";
 
 export async function createUserWithEmail(email: string, password: string) {
     const uc = await createUserWithEmailAndPassword(auth, email, password);
-    await createUser(uc);
+    await sendEmailVerification(uc.user);
+    await createUserFromEmail(uc);
     return uc;
 }
 
@@ -23,7 +24,7 @@ export async function signInWithGoogle() {
 
     if (ucData && ucData.isNewUser) {
         // Create a new user in the database
-        await createUser(uc);
+        await createUserFromProvider(uc);
     }
 
     // Get the user from the database
@@ -42,7 +43,7 @@ export async function signInWithMicrosoft() {
 
     if (ucData && ucData.isNewUser) {
         // Create a new user in the database
-        await createUser(uc);
+        await createUserFromProvider(uc);
     }
 
     // Get the user from the database

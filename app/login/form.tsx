@@ -38,6 +38,7 @@ export default function LoginForm() {
                     width: 350,
                     marginTop: 10
                 }}
+                password
                 value={password}
                 onChange={(res: string) => {
                     setPassword(res);

@@ -1,4 +1,5 @@
 import { basicMetadata } from './backend/seo'
+import VerificationBanner from './components/banner/verification';
 import Header from './components/header/header';
 import { UserContextProvider } from './context/context';
 import './globals.css'
@@ -14,6 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <UserContextProvider>
+          <VerificationBanner />
           <Header />
           {children}
         </UserContextProvider>

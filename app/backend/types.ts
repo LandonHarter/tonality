@@ -7,3 +7,7 @@ export type User = {
     profilePicture: string;
     createdAt: Date | Timestamp | number;
 };
+
+export type AdditionalUserData = {
+    emailVerified: boolean;
+}

@@ -1,0 +1,28 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container h1 {
+    font-size: 2.5rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.container p {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text650);
+}
+
+.check_mark {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 40px;
+    fill: var(--success500);
+}

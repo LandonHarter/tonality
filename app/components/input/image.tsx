@@ -9,6 +9,7 @@ export default function TextInputWithImage(props: {
     placeholder?: string,
     styles?: any,
     value?: string,
+    password?: boolean,
     onChange: (res: string) => void,
 }) {
     return (
@@ -17,7 +18,7 @@ export default function TextInputWithImage(props: {
             <div className={styles.image_input_divider} />
             <div className={styles.image_input_container}>
                 <label className={styles.image_input_label}>{props.label}</label>
-                <input className={styles.image_input} placeholder={props.placeholder || ''} value={props.value} onChange={(e) => props.onChange(e.target.value)} />
+                <input className={styles.image_input} type={props.password ? 'password' : 'text'} placeholder={props.placeholder || ''} value={props.value} onChange={(e) => props.onChange(e.target.value)} />
             </div>
         </div>
     );

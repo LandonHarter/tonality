@@ -1,0 +1,11 @@
+.banner {
+    width: 100vw;
+    height: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+
+    background-color: var(--p550);
+}
