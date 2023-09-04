@@ -1,0 +1,137 @@
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+.left {
+    width: 50vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 9fr;
+}
+
+.right {
+    width: 50vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.top {
+    width: 100%;
+    height: 10vh;
+    min-height: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bottom {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img {
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/illustration/trumpet.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.logo {
+    --image-width: 15vw;
+    --image-height: calc(var(--image-width) * (512/2780));
+    --image-min-width: 325px;
+    --image-min-height: calc(var(--image-min-width) * (512/2780));
+
+    width: var(--image-width);
+    min-width: var(--image-min-width);
+    height: var(--image-height);
+    min-height: var(--image-min-height);
+}
+
+.header {
+    text-align: center;
+    color: var(--text500);
+    font-size: 50px;
+    margin-top: 100px;
+}
+
+.subheader {
+    text-align: center;
+    color: var(--text650);
+    font-size: 20px;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-top: 40px;
+}
+
+.login {
+    margin-top: 10px;
+    width: 350px;
+    transition: 0.3s ease-in-out;
+}
+
+.login_loading {
+    opacity: 0.5;
+}
+
+.or {
+    width: 350px;
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.or_divider {
+    width: 100%;
+    height: 1px;
+    border-radius: 10px;
+    background-color: var(--text700);
+}
+
+.or_text {
+    text-align: center;
+    color: var(--text700);
+    font-size: 15px;
+}
+
+.providers {
+    width: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.provider {
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    margin: 10px;
+
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}

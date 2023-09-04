@@ -1,4 +1,5 @@
 import { basicMetadata } from './backend/seo'
+import Header from './components/header/header';
 import { UserContextProvider } from './context/context';
 import './globals.css'
 
@@ -13,6 +14,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <UserContextProvider>
+          <Header />
           {children}
         </UserContextProvider>
       </body>

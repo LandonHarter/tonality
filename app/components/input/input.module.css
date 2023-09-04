@@ -1,0 +1,46 @@
+.image_input_group {
+    width: fit-content;
+    height: 60px;
+
+    display: flex;
+    align-items: center;
+
+    border: 2px solid var(--bg350);
+    border-radius: 10px;
+}
+
+.image_input_image {
+    margin-left: 15px;
+}
+
+.image_input_divider {
+    width: 2px;
+    height: 35px;
+    border-radius: 10px;
+
+    background-color: var(--bg350);
+    margin: 0 15px;
+}
+
+.image_input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--text500);
+}
+
+.image_input::placeholder {
+    color: var(--text600);
+}
+
+.image_input_container {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.image_input_label {
+    font-size: 11px;
+    color: var(--text650);
+    margin-top: 10px;
+}

@@ -1,0 +1,21 @@
+.header {
+    width: 100vw;
+    height: 100px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_logo {
+    --logo-height: 50px;
+    --logo-width: calc(var(--logo-height) * (2800/512));
+
+    width: var(--logo-width);
+    height: var(--logo-height);
+}
+
+.header_section {
+    display: flex;
+    align-items: center;
+}
