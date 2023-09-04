@@ -13,6 +13,7 @@ export default function Header() {
     const excludedPaths = [
         '/login',
         '/register',
+        '/credits',
     ];
 
     useEffect(() => {
