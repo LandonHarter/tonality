@@ -18,6 +18,10 @@ export async function signInWithGoogle() {
 
 export async function signInWithMicrosoft() {
     const provider = new OAuthProvider("microsoft.com");
+    provider.setCustomParameters({
+        prompt: "consent",
+        tenant: process.env.NEXT_PUBLIC_MICROSOFT_TENANT || 'common',
+    });
     const uc = await signInWithPopup(auth, provider);
     const ucData = getAdditionalUserInfo(uc);
 
