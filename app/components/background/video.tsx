@@ -4,15 +4,14 @@ export default function VideoBackground(props: {
     src: string,
     opacity?: number,
     blur?: number,
-    children: React.ReactNode,
+    children?: React.ReactNode,
 }) {
     return (
         <div>
             <video src={props.src} autoPlay muted loop className={styles.video} style={{
-                opacity: props.opacity ?? 0.3,
-                filter: `blur(${props.blur ?? 0}px)`,
+                filter: `blur(${props.blur ?? 0}px) opacity(${props.opacity ?? 1})`,
             }} />
-            {props.children}
+            {props.children || <></>}
         </div>
     );
 }
