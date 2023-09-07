@@ -32,13 +32,14 @@ export default function Home() {
               <div className={styles.ring1} />
               <div className={styles.ring2} />
             </div>
-            <h1>Interactive Lessons</h1>
+            <h1>Friendly Community</h1>
           </div>
           <div className={styles.feature}>
             <div className={styles.feature_image}>
-              <Image src='/images/icons/email.png' alt='email' width={35} height={35} style={{
+              <Image src='/images/icons/lesson.png' alt='email' width={35} height={35} style={{
                 position: 'absolute',
-                zIndex: 2
+                zIndex: 2,
+                transform: 'translateX(2px) translateY(-2px)'
               }} />
               <div className={styles.ring1} />
               <div className={styles.ring2} />
@@ -47,14 +48,14 @@ export default function Home() {
           </div>
           <div className={styles.feature}>
             <div className={styles.feature_image}>
-              <Image src='/images/icons/email.png' alt='email' width={35} height={35} style={{
+              <Image src='/images/icons/search.png' alt='email' width={25} height={25} style={{
                 position: 'absolute',
                 zIndex: 2
               }} />
               <div className={styles.ring1} />
               <div className={styles.ring2} />
             </div>
-            <h1>Interactive Lessons</h1>
+            <h1>Deep Analysis</h1>
           </div>
         </div>
       </div>

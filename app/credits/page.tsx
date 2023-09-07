@@ -14,6 +14,9 @@ export default function CreditsPage() {
                 <a href="https://www.flaticon.com/free-icons/password" title="password icons">Password icons created by Freepik - Flaticon</a>
                 <p><a href="https://iconscout.com/3ds/drum" target="_blank">Free Drum 3D Icon</a> by <a href="https://iconscout.com/contributors/gilang-dhait" target="_blank">Gilang Dhait</a></p>
                 <a href="https://www.flaticon.com/free-icons/user" title="user icons">User icons created by kmg design - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/guest-house" title="guest house icons">Guest house icons created by Yogs144 - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/lesson" title="lesson icons">Lesson icons created by Metami septiana - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Smashicons - Flaticon</a>
             </div>
 
             <div className={styles.section}>

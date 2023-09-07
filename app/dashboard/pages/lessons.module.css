@@ -1,0 +1,40 @@
+.top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.top h1 {
+    margin-left: 15px;
+    font-size: 35px;
+}
+
+.search {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.search_input {
+    width: calc(100% - 90px);
+    height: 100%;
+    padding: 0 15px;
+    margin-right: 10px;
+
+    background-color: var(--bg500);
+    border-radius: 10px;
+    border: solid 4px var(--bg450);
+    outline: none;
+    font-size: 25px;
+    color: var(--text500);
+}
+
+.submit_search {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
