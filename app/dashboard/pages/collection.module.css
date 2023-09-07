@@ -34,8 +34,11 @@
 .collection p {
     font-size: 22px;
     color: var(--text600);
-    max-lines: 2;
+    height: 60px;
+
+    overflow: hidden;
     text-overflow: ellipsis;
+    white-space: pre-wrap;
 }
 
 .collection h4 {
