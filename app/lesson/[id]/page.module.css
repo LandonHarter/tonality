@@ -1,0 +1,41 @@
+.container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
+    z-index: -1;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 70%);
+}
+
+.video {
+    --video-width: 60vw;
+    width: var(--video-width);
+    height: calc(var(--video-width) * 0.5625);
+    margin-bottom: 100px;
+}
+
+.text_content {
+    width: 100vw;
+    margin-bottom: 100px;
+}
+
+.title {
+    margin-left: 100px;
+    font-size: 60px;
+}
+
+.description {
+    margin-left: 100px;
+    font-size: 24px;
+    color: var(--text600);
+}
