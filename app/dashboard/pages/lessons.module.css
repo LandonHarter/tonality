@@ -74,6 +74,7 @@
     font-size: 18px;
     font-weight: 400;
 
+    width: calc(100% - (16/9 * 100px));
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

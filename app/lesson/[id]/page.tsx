@@ -34,7 +34,7 @@ export default function Lesson() {
             <div className={styles.container}>
                 <Image src={lesson.image} alt={lesson.title} width={1920} height={1080} className={styles.image} />
                 <div style={{
-                    marginBottom: '30vh'
+                    marginBottom: '35vh'
                 }} />
 
                 <div className={styles.text_content}>

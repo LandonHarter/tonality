@@ -32,10 +32,12 @@
 .title {
     margin-left: 100px;
     font-size: 60px;
+    width: calc(100vw - 200px);
 }
 
 .description {
     margin-left: 100px;
     font-size: 24px;
     color: var(--text600);
+    width: calc(100vw - 200px);
 }
