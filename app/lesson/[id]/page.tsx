@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation"
 import { useEffect, useState } from "react";
 import styles from './page.module.css';
 import Image from "next/image";
+import { getLesson } from "@/backend/lessons";
 
 export default function Lesson() {
     const id = usePathname().split('/')[2];
@@ -16,10 +17,7 @@ export default function Lesson() {
 
     useEffect(() => {
         (async () => {
-            const lessonRef = doc(collection(db, 'lessons'), id);
-            const lessonSnapshot = await getDoc(lessonRef);
-            const lessonData = lessonSnapshot.data();
-
+            const lessonData = await getLesson(id);
             setLesson(lessonData);
             setLoading(false);
         })();

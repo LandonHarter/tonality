@@ -6,6 +6,7 @@ import { collection, getDocs, query } from 'firebase/firestore';
 import { db } from '@/backend/firebase';
 import Image from 'next/image';
 import Link from 'next/link';
+import { pushLessonToCache } from '@/backend/lessons';
 
 export default function LessonsContent() {
     const [lessons, setLessons] = useState<any[]>([]);
@@ -21,6 +22,7 @@ export default function LessonsContent() {
                     id: lesson.id,
                     ...lesson.data()
                 });
+                pushLessonToCache(lesson.id, lesson.data());
             });
 
             setLessons(lessonsData);

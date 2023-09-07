@@ -47,7 +47,7 @@ export default function LoginForm() {
             <button className={`${styles.login} ${loading && styles.login_loading}`} disabled={loading} onClick={async () => {
                 setLoading(true);
                 await signInWithEmail(email, password);
-                router.push('/');
+                router.push('/dashboard');
             }}>{loading ? 'Loading...' : 'Continue'}</button>
 
             <p className={styles.register}>Don&apos;t have an account? <Link href={'/register'}>Register</Link></p>
@@ -64,14 +64,14 @@ export default function LoginForm() {
                 }} onClick={async () => {
                     setLoading(true);
                     await signInWithGoogle();
-                    router.push('/');
+                    router.push('/dashboard');
                 }} />
                 <button className={styles.provider} style={{
                     backgroundImage: 'url(/images/providers/microsoft.png)'
                 }} onClick={async () => {
                     setLoading(true);
                     await signInWithMicrosoft();
-                    router.push('/');
+                    router.push('/dashboard');
                 }} />
             </div>
         </form>

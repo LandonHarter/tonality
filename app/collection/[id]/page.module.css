@@ -1,0 +1,50 @@
+.top {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.top h1 {
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.top p {
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text600);
+}
+
+.lessons {
+    margin-top: 30px;
+}
+
+.lesson {
+    width: calc(100% - 40px);
+
+    background-color: var(--bg550);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+}
+
+.lesson img {
+    border-radius: 10px;
+}
+
+.lesson_details {
+    width: calc(100% - 220px);
+    margin-left: 20px;
+}
+
+.lesson_details p {
+    width: 100%;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text600);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
