@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './lessons.module.css';
+import LessonsContent from './lessonscontent';
 
 export default function Lessons() {
     return (
@@ -13,6 +14,10 @@ export default function Lessons() {
                 <button className={styles.submit_search}>
                     <Image src="/images/icons/search.png" alt='search' width={30} height={30} />
                 </button>
+            </div>
+
+            <div className={styles.lessons}>
+                <LessonsContent />
             </div>
         </div>
     );
