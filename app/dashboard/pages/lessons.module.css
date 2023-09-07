@@ -59,6 +59,7 @@
 
 .lesson_content {
     --margin-top: 15px;
+    width: 100%;
     height: calc(100% - var(--margin-top));
     padding-top: var(--margin-top);
 
@@ -74,7 +75,7 @@
     font-size: 18px;
     font-weight: 400;
 
-    width: calc(100% - (16/9 * 100px));
+    width: calc(100% - (16/9 * 100px) - 50px);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
