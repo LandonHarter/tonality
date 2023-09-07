@@ -4,7 +4,7 @@ import { useContext, useState } from 'react';
 import styles from './page.module.css';
 import UserContext from '@/context/UserContext';
 import Image from 'next/image';
-import { SelectedTabContext } from './page';
+import SelectedTabContext from '@/context/SelectedTabContext';
 
 export default function DashboardSidebar() {
     const user = useContext(UserContext);
