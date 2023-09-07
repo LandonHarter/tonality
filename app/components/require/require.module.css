@@ -1,0 +1,31 @@
+.container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg500);
+}
+
+.container h1 {
+    font-size: 60px;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.container p {
+    font-size: 30px;
+    color: var(--text600);
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+.link_button {
+    margin-top: 20px;
+    font-size: 24px;
+}

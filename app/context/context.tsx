@@ -13,12 +13,16 @@ export function UserContextProvider(
     const { startLoading, stopLoading } = useContext(LoadingContext);
 
     useEffect(() => {
-        if (loading) {
+        if (!user && !loading) {
             startLoading();
         } else {
             stopLoading();
         }
-    }, [loading]);
+
+        if (!loading && !error && !user) {
+            stopLoading();
+        }
+    }, [user]);
 
     return (
         <UserContext.Provider value={user}>

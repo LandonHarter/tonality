@@ -66,10 +66,6 @@
     background-color: var(--bg400);
 }
 
-.option img {
-    margin-right: 15px;
-}
-
 .container {
     width: 100vw;
     height: 100vh;

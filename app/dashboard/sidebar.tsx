@@ -10,10 +10,19 @@ export default function DashboardSidebar() {
     const user = useContext(UserContext);
     const { tab, setTab } = useContext(SelectedTabContext);
 
-    function tabUI(name: string, icon: string, index: number, content: JSX.Element = <></>) {
+    function tabUI(name: string, icon: string, index: number, imageSize?: number) {
         return (
             <li className={`${styles.option} ${tab === index && styles.option_selected}`} onClick={() => { setTab(index) }}>
-                <Image src={icon} alt='icon' width={27} height={27} className={styles.option_img} />
+                <div style={{
+                    width: 27,
+                    height: 27,
+                    marginRight: 10,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                }}>
+                    <Image src={icon} alt='icon' width={imageSize || 27} height={imageSize || 27} className={styles.option_img} />
+                </div>
                 {name}
             </li>
         );
@@ -33,6 +42,7 @@ export default function DashboardSidebar() {
                 <ul>
                     {tabUI('Home', '/images/icons/home.png', 0)}
                     {tabUI('Lessons', '/images/icons/lesson.png', 1)}
+                    {tabUI('Collections', '/images/icons/collection.png', 2, 20)}
                 </ul>
             </nav>
         </aside>

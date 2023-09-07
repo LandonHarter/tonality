@@ -17,6 +17,7 @@ export default function CreditsPage() {
                 <a href="https://www.flaticon.com/free-icons/guest-house" title="guest house icons">Guest house icons created by Yogs144 - Flaticon</a>
                 <a href="https://www.flaticon.com/free-icons/lesson" title="lesson icons">Lesson icons created by Metami septiana - Flaticon</a>
                 <a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Smashicons - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/four" title="four icons">Four icons created by Freepik - Flaticon</a>
             </div>
 
             <div className={styles.section}>
