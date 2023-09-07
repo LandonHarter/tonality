@@ -41,7 +41,7 @@ export default function Lesson() {
                     <h1 className={styles.title}>{lesson.title}</h1>
                     <p className={styles.description}>{lesson.description}</p>
                 </div>
-                <iframe width="560" height="315" className={styles.video} src={lesson.video.replace("watch?v=", "embed/")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe width="560" height="315" className={styles.video} src={lesson.video.replace("watch?v=", "embed/")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>
         </RequireSignIn>
     );
