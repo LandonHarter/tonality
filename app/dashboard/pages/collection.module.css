@@ -34,6 +34,8 @@
 .collection p {
     font-size: 22px;
     color: var(--text600);
+    max-lines: 2;
+    text-overflow: ellipsis;
 }
 
 .collection h4 {
