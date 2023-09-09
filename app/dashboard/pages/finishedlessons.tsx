@@ -14,8 +14,11 @@ export default function FinishedLessons() {
     async function getFinishedLessons() {
         if (!user) return;
 
-        const finishedLessonIds = user.lessonsCompleted;
-        const finishedLessonsArr = await Promise.all(finishedLessonIds.map(async (lessonId: string) => {
+        let finishedLessonsCut = user.lessonsCompleted;
+        if (finishedLessonsCut.length > 3) {
+            finishedLessonsCut = finishedLessonsCut.slice(finishedLessonsCut.length - 3, finishedLessonsCut.length);
+        }
+        const finishedLessonsArr = await Promise.all(finishedLessonsCut.map(async (lessonId: string) => {
             const lesson = await getLesson(lessonId);
             return {
                 id: lessonId,
