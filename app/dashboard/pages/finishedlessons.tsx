@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 export default function FinishedLessons() {
     const [finishedLessons, setFinishedLessons] = useState<any[]>([]);
-    const user = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     async function getFinishedLessons() {
         if (!user) return;

@@ -9,6 +9,16 @@ export default function useCurrentUser() {
     const [user, loading, error] = useAuthState(auth);
     const [currentUser, setCurrentUser] = useState<User | null>(null);
 
+    function updateUser() {
+        if (user) {
+            getUserData(user.uid).then((userData) => {
+                setCurrentUser(userData);
+            });
+        } else {
+            setCurrentUser(null);
+        }
+    }
+
     useEffect(() => {
         if (user) {
             getUserData(user.uid).then((userData) => {
@@ -19,5 +29,5 @@ export default function useCurrentUser() {
         }
     }, [user]);
 
-    return { user: currentUser, loading, error };
+    return { user: currentUser, loading, error, updateUser };
 }

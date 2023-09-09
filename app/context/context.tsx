@@ -9,7 +9,7 @@ import Loading from "@/components/loading/loading";
 export function UserContextProvider(
     { children }: { children: React.ReactNode }
 ) {
-    const { user, loading, error } = useCurrentUser();
+    const { user, loading, error, updateUser } = useCurrentUser();
     const { startLoading, stopLoading } = useContext(LoadingContext);
 
     useEffect(() => {
@@ -25,7 +25,10 @@ export function UserContextProvider(
     }, [user]);
 
     return (
-        <UserContext.Provider value={user}>
+        <UserContext.Provider value={{
+            user,
+            updateUser
+        }}>
             {children}
         </UserContext.Provider>
     );

@@ -6,7 +6,7 @@ import UserContext from './context/UserContext';
 import Link from 'next/link';
 
 export default function CTA() {
-    const user = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     return (
         <>

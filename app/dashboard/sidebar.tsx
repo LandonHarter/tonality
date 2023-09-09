@@ -7,7 +7,7 @@ import Image from 'next/image';
 import SelectedTabContext from '@/context/SelectedTabContext';
 
 export default function DashboardSidebar() {
-    const user = useContext(UserContext);
+    const { user } = useContext(UserContext);
     const { tab, setTab } = useContext(SelectedTabContext);
 
     function tabUI(name: string, icon: string, index: number, imageSize?: number) {

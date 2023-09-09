@@ -68,7 +68,7 @@
     margin-top: 30px;
 
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 
 .stat {
@@ -84,16 +84,12 @@
 }
 
 .recommended {
-    width: calc(60% - 10px);
+    width: calc(60% - 40px);
     margin-left: 10px;
     height: 250px;
     border-radius: 10px;
+    padding: 15px;
     background-color: var(--bg450);
-}
-
-.recommended_title {
-    margin-left: 15px;
-    margin-top: 15px;
 }
 
 .lessons {
@@ -153,4 +149,19 @@
 
 .checkmark {
     transform: translateX(-50px);
+}
+
+.recommended_empty {
+    width: 100%;
+    height: 80%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.recommended_empty h1 {
+    font-size: 25px;
+    font-weight: 400;
+    color: var(--text600);
 }

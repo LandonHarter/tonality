@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function HeaderRight() {
-    const user = useContext(UserContext);
+    const { user } = useContext(UserContext);
 
     function signIn() {
         return (

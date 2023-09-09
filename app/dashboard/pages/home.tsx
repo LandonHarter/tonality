@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import styles from './home.module.css';
 import FinishedLessons from './finishedlessons';
+import Stats from './stats';
+import Recommended from './recommend';
 
 export default function Home() {
     return (
@@ -19,22 +21,12 @@ export default function Home() {
                         <p className={styles.stats_subtitle}>All-time</p>
 
                         <div className={styles.stats_content}>
-                            <div className={styles.stat}>
-                                <h1 className={styles.stat_number}>0</h1>
-                                <p className={styles.stat_metric}>Lessons Completed</p>
-                            </div>
-                            <div className={styles.stat}>
-                                <h1 className={styles.stat_number}>0</h1>
-                                <p className={styles.stat_metric}>Minutes Studied</p>
-                            </div>
-                            <div className={styles.stat}>
-                                <h1 className={styles.stat_number}>0</h1>
-                                <p className={styles.stat_metric}>Correct Answers</p>
-                            </div>
+                            <Stats />
                         </div>
                     </div>
                     <div className={styles.recommended}>
-                        <h1 className={styles.recommended_title}>Recommended Lessons</h1>
+                        <h1>Recommended Lessons</h1>
+                        <Recommended />
                     </div>
                 </div>
             </div>

@@ -16,7 +16,7 @@ export default function Lesson() {
     const [lesson, setLesson] = useState<any>({});
     const [completed, setCompleted] = useState(false);
     const [loading, setLoading] = useState(true);
-    const user = useContext(UserContext);
+    const { user, updateUser } = useContext(UserContext);
 
     async function markAsComplete() {
         if (!user) return;
@@ -24,6 +24,7 @@ export default function Lesson() {
         await updateDoc(userRef, {
             lessonsCompleted: arrayUnion(id)
         });
+        updateUser();
     }
 
     useEffect(() => {
