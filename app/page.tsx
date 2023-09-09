@@ -44,7 +44,7 @@ export default function Home() {
               <div className={styles.ring1} />
               <div className={styles.ring2} />
             </div>
-            <h1>Interactive Lessons</h1>
+            <h1>High Quality Lessons</h1>
           </div>
           <div className={styles.feature}>
             <div className={styles.feature_image}>

@@ -18,7 +18,7 @@ export default function Recommended() {
                 const lessons = await recommendLessons(user, 3);
                 const finishedLessons = user.lessonsCompleted;
                 const recommendedLessons = lessons.filter((lesson: any) => {
-                    const finishedLesson = finishedLessons.find((finishedLesson: any) => finishedLesson.id === lesson.id);
+                    const finishedLesson = finishedLessons.includes(lesson.id);
                     return finishedLesson === undefined;
                 });
 
