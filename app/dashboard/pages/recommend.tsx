@@ -15,7 +15,14 @@ export default function Recommended() {
     useEffect(() => {
         if (user) {
             (async () => {
-                setRecommended(await recommendLessons(user, 3));
+                const lessons = await recommendLessons(user, 3);
+                const finishedLessons = user.lessonsCompleted;
+                const recommendedLessons = lessons.filter((lesson: any) => {
+                    const finishedLesson = finishedLessons.find((finishedLesson: any) => finishedLesson.id === lesson.id);
+                    return finishedLesson === undefined;
+                });
+
+                setRecommended(recommendedLessons);
                 setLoading(false);
             })();
         }
