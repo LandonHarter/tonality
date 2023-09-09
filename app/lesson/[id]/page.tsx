@@ -24,7 +24,6 @@ export default function Lesson() {
         await updateDoc(userRef, {
             lessonsCompleted: arrayUnion(id)
         });
-        updateUser();
     }
 
     useEffect(() => {
