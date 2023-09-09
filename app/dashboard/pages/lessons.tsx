@@ -5,7 +5,7 @@ import styles from './lessons.module.css';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { pushLessonToCache } from '@/backend/lessons';
-import { collection, getDocs, query } from 'firebase/firestore';
+import { collection, getDocs, limit, query } from 'firebase/firestore';
 import { db } from '@/backend/firebase';
 import algoliasearch from 'algoliasearch';
 
@@ -38,7 +38,7 @@ export default function Lessons() {
 
     useEffect(() => {
         (async () => {
-            const lessonsQuery = query(collection(db, 'lessons'));
+            const lessonsQuery = query(collection(db, 'lessons'), limit(15));
             const lessonsSnapshot = await getDocs(lessonsQuery);
             const lessonsData: any[] = [];
             lessonsSnapshot.forEach((lesson) => {

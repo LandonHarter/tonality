@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import styles from './collection.module.css';
 import { useEffect, useState } from 'react';
-import { collection, getDocs, query } from 'firebase/firestore';
+import { collection, getDocs, limit, query } from 'firebase/firestore';
 import { db } from '@/backend/firebase';
 import Link from 'next/link';
 import algoliasearch from 'algoliasearch';
@@ -37,7 +37,7 @@ export default function Collections() {
 
     useEffect(() => {
         (async () => {
-            const collectionsQuery = query(collection(db, 'collections'));
+            const collectionsQuery = query(collection(db, 'collections'), limit(15));
             const collectionsSnapshot = await getDocs(collectionsQuery);
 
             const collectionsData: any[] = [];
