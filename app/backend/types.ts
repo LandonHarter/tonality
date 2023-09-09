@@ -6,6 +6,7 @@ export type User = {
     name: string;
     profilePicture: string;
     createdAt: Date | Timestamp | number;
+    lessonsCompleted: string[];
 };
 
 export type AdditionalUserData = {

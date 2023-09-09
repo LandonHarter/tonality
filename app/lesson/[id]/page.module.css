@@ -41,3 +41,18 @@
     color: var(--text600);
     width: calc(100vw - 200px);
 }
+
+.complete {
+    width: fit-content;
+    height: fit-content;
+    white-space: nowrap;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+
+.completed {
+    background-color: transparent;
+    border: solid 2px var(--text600);
+    color: var(--text600);
+    cursor: not-allowed;
+}

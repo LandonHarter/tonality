@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import styles from './home.module.css';
+import FinishedLessons from './finishedlessons';
 
 export default function Home() {
     return (
@@ -10,7 +11,7 @@ export default function Home() {
             </div>
             <div className={styles.content}>
                 <div className={styles.progress}>
-                    <h3>You have no unfinished lessons</h3>
+                    <FinishedLessons />
                 </div>
                 <div className={styles.double}>
                     <div className={styles.stats}>

@@ -95,3 +95,62 @@
     margin-left: 15px;
     margin-top: 15px;
 }
+
+.lessons {
+    width: calc(100% - 30px);
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.lesson {
+    width: calc(100% - 20px);
+    height: 80px;
+    padding: 10px;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--bg400);
+    border-radius: 10px;
+}
+
+.lesson_image {
+    --image-height: 85px;
+    --image-width: calc(var(--image-height) * (16 / 9));
+
+    width: var(--image-width);
+    height: var(--image-height);
+
+    border-radius: 10px;
+}
+
+.lesson_text {
+    width: 40%;
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.lesson_text h1 {
+    font-size: 32px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.lesson_text p {
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--text600);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.checkmark {
+    transform: translateX(-50px);
+}

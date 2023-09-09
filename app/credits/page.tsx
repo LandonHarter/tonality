@@ -18,6 +18,7 @@ export default function CreditsPage() {
                 <a href="https://www.flaticon.com/free-icons/lesson" title="lesson icons">Lesson icons created by Metami septiana - Flaticon</a>
                 <a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Smashicons - Flaticon</a>
                 <a href="https://www.flaticon.com/free-icons/four" title="four icons">Four icons created by Freepik - Flaticon</a>
+                <a href="https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by kliwir art - Flaticon</a>
             </div>
 
             <div className={styles.section}>

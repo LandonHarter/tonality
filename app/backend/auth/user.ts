@@ -10,7 +10,8 @@ export async function createUserFromProvider(uc: UserCredential) {
         email: uc.user.email || '',
         name: uc.user.displayName || `User ${uc.user.uid}`,
         profilePicture: uc.user.photoURL || '',
-        createdAt: Timestamp.now()
+        createdAt: Timestamp.now(),
+        lessonsCompleted: []
     };
     await setDoc(userRef, userObj);
 }
@@ -22,7 +23,8 @@ export async function createUserFromEmail(uc: UserCredential) {
         email: uc.user.email || '',
         name: uc.user.email?.split('@')[0] || `User ${uc.user.uid}`,
         profilePicture: 'https://tonalityedu.vercel.app/images/icons/avatar.png',
-        createdAt: Timestamp.now()
+        createdAt: Timestamp.now(),
+        lessonsCompleted: []
     };
     await setDoc(userRef, userObj);
 }
