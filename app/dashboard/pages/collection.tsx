@@ -95,7 +95,7 @@ export default function Collections() {
                         <div className={styles.dot}></div>
                     </div>
                     <h1 className={styles.loading_title}>Loading...</h1>
-                </div> : <>
+                </div> : <div className={styles.collections}>
                     {collections.map((collection: any, index: number) => {
                         return (
                             <Link href={`/collection/${collection.id}`} key={index} style={{ textDecoration: 'none' }}>
@@ -109,7 +109,7 @@ export default function Collections() {
                             </Link>
                         );
                     })}
-                </>
+                </div>
             }
         </>
     );
