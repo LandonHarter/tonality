@@ -32,7 +32,8 @@ export default function Lesson() {
             setLesson(lessonData);
 
             if (user) {
-                const finishedLesson = user.lessonsCompleted.find((lesson: any) => lesson.id === id);
+                console.log(user.lessonsCompleted);
+                const finishedLesson = user.lessonsCompleted.includes(id);
                 setCompleted(finishedLesson !== undefined);
             }
 
@@ -42,7 +43,7 @@ export default function Lesson() {
 
     useEffect(() => {
         if (user) {
-            const finishedLesson = user.lessonsCompleted.find((lesson: any) => lesson.id === id);
+            const finishedLesson = user.lessonsCompleted.includes(id);
             setCompleted(finishedLesson !== undefined);
         }
     }, [user]);

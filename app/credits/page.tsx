@@ -23,6 +23,7 @@ export default function CreditsPage() {
 
             <div className={styles.section}>
                 <h1 className={styles.title}>Videos</h1>
+                <p>No videos belong to me. All videos are linked to <a href='https://youtube.com' target='_blank'>Youtube</a>, in which all videos are posted by the respective creator. I gain nothing from any video, only direct traffic and show videos on my site.</p>
             </div>
         </div>
     );
