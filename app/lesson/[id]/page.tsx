@@ -24,6 +24,7 @@ export default function Lesson() {
         await updateDoc(userRef, {
             lessonsCompleted: arrayUnion(id)
         });
+        updateUser();
     }
 
     useEffect(() => {
@@ -73,7 +74,7 @@ export default function Lesson() {
                             await markAsComplete();
                         }}>Mark as Complete</button>
                     </div>
-                    <p className={styles.description}>{lesson.description}</p>
+                    <p className={styles.description}>{lesson.description === '' ? 'No description' : lesson.description}</p>
                 </div>
                 <iframe width="560" height="315" className={styles.video} src={lesson.video.replace("watch?v=", "embed/")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen />
             </div>

@@ -112,7 +112,7 @@ export default function Lessons() {
                                 <Image src={lesson.image} alt={lesson.title} width={500} height={500} className={styles.lesson_image} />
                                 <div className={styles.lesson_content}>
                                     <h2>{lesson.title}</h2>
-                                    <p>{lesson.description}</p>
+                                    <p>{lesson.description === '' ? 'No description' : lesson.description}</p>
                                 </div>
                             </div>
                         </Link>

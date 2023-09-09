@@ -58,7 +58,7 @@ export default function Collection() {
                             <Image src={lesson.image} alt={lesson.title} width={160} height={90} />
                             <div className={styles.lesson_details}>
                                 <h1>{lesson.title}</h1>
-                                <p>{lesson.description}</p>
+                                <p>{lesson.description === '' ? 'No description' : lesson.description}</p>
                             </div>
                         </div>
                     </Link>

@@ -48,7 +48,7 @@ export default function Recommended() {
                                     <Image src={lesson.image} alt={lesson.title} width={160} height={90} className={styles.lesson_image} />
                                     <div className={styles.lesson_text}>
                                         <h1>{lesson.title}</h1>
-                                        <p>{lesson.description}</p>
+                                        <p>{lesson.description === '' ? 'No description' : lesson.description}</p>
                                     </div>
                                 </div>
                             </div>
