@@ -12,6 +12,8 @@ import algoliasearch from 'algoliasearch';
 export default function Lessons() {
     const [lessons, setLessons] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);
+    const [showLoadMore, setShowLoadMore] = useState(true);
+    const [searchLimit, setSearchLimit] = useState(15);
 
     const [searchQuery, setSearchQuery] = useState('');
     const [searchClient, setSearchClient] = useState<any>(null);
@@ -34,38 +36,42 @@ export default function Lessons() {
 
         setLessons(lessonsData);
         setLoading(false);
+        setShowLoadMore(false);
+    }
+
+    async function loadLessons(num: number = 15) {
+        const lessonsQuery = query(collection(db, 'lessons'), limit(num));
+        const lessonsSnapshot = await getDocs(lessonsQuery);
+        const lessonsData: any[] = [];
+        lessonsSnapshot.forEach((lesson) => {
+            lessonsData.push({
+                id: lesson.id,
+                ...lesson.data()
+            });
+            pushLessonToCache(lesson.id, lesson.data());
+        });
+
+        setLessons(lessonsData);
+        setSearchLimit(num);
+
+        const algoliaAppId = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
+        const algoliaSearchKey = process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY;
+
+        if (!algoliaAppId || !algoliaSearchKey) {
+            console.error('Algolia app ID or search key not found');
+            return;
+        }
+
+        const algoliaClient = algoliasearch(algoliaAppId, algoliaSearchKey);
+        const algoliaIndex = algoliaClient.initIndex('lessons');
+        setSearchClient(algoliaClient);
+        setSearchIndex(algoliaIndex);
+
+        setLoading(false);
     }
 
     useEffect(() => {
-        (async () => {
-            const lessonsQuery = query(collection(db, 'lessons'), limit(15));
-            const lessonsSnapshot = await getDocs(lessonsQuery);
-            const lessonsData: any[] = [];
-            lessonsSnapshot.forEach((lesson) => {
-                lessonsData.push({
-                    id: lesson.id,
-                    ...lesson.data()
-                });
-                pushLessonToCache(lesson.id, lesson.data());
-            });
-
-            setLessons(lessonsData);
-
-            const algoliaAppId = process.env.NEXT_PUBLIC_ALGOLIA_APP_ID;
-            const algoliaSearchKey = process.env.NEXT_PUBLIC_ALGOLIA_SEARCH_KEY;
-
-            if (!algoliaAppId || !algoliaSearchKey) {
-                console.error('Algolia app ID or search key not found');
-                return;
-            }
-
-            const algoliaClient = algoliasearch(algoliaAppId, algoliaSearchKey);
-            const algoliaIndex = algoliaClient.initIndex('lessons');
-            setSearchClient(algoliaClient);
-            setSearchIndex(algoliaIndex);
-
-            setLoading(false);
-        })();
+        loadLessons();
     }, []);
 
     return (
@@ -111,6 +117,17 @@ export default function Lessons() {
                             </div>
                         </Link>
                     ))}
+
+                    {showLoadMore &&
+                        <button style={{
+                            width: 'fit-content',
+                            fontSize: 24,
+                            alignSelf: 'center'
+                        }} onClick={async () => {
+                            setLoading(true);
+                            await loadLessons(searchLimit + 15);
+                        }}>Load More</button>
+                    }
                 </div>
             }
         </div>
